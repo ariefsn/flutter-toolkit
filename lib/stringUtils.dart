@@ -26,7 +26,7 @@ class StringUtils {
       return str;
     }
 
-    return str.substring(0, length-1);
+    return str.substring(0, length - 1);
   }
 
   /// Limit string into specific length, and append another string.

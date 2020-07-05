@@ -30,22 +30,25 @@ class MapUtils {
   Map<String, dynamic> toJson() => _m;
 
   Map<String, dynamic> _transform(Map<String, dynamic> json, String mode) {
-    Map<String, dynamic> clone = Map<String, dynamic>.from(json) ;
+    Map<String, dynamic> clone = Map<String, dynamic>.from(json);
 
     if (mode == "") {
       return clone;
     }
 
     json.forEach((key, value) {
-      if (["u", "upper", "uppercase"].indexOf(mode.toLowerCase())  > -1) {
+      if (["u", "upper", "uppercase"].indexOf(mode.toLowerCase()) > -1) {
         clone.remove(key);
-        clone[key.toUpperCase()] = value is Map ? _transform(value, mode) : value;
-      } else if (["l", "lower", "lowercase"].indexOf(mode.toLowerCase())  > -1) {
+        clone[key.toUpperCase()] =
+            value is Map ? _transform(value, mode) : value;
+      } else if (["l", "lower", "lowercase"].indexOf(mode.toLowerCase()) > -1) {
         clone.remove(key);
-        clone[key.toLowerCase()] = value is Map ? _transform(value, mode) : value;
-      } else if (["c", "capital"].indexOf(mode.toLowerCase())  > -1) {
+        clone[key.toLowerCase()] =
+            value is Map ? _transform(value, mode) : value;
+      } else if (["c", "capital"].indexOf(mode.toLowerCase()) > -1) {
         clone.remove(key);
-        clone[StringUtils().capitalize(key)] = value is Map ? _transform(value, mode) : value;
+        clone[StringUtils().capitalize(key)] =
+            value is Map ? _transform(value, mode) : value;
       }
     });
 
@@ -117,7 +120,7 @@ class MapUtils {
   }
 
   /// Get map value by key as int.
-  int getInt (String key) {
+  int getInt(String key) {
     if (!_m.containsKey(key)) {
       return null;
     }
@@ -189,5 +192,4 @@ class MapUtils {
 
     return _m[key];
   }
-
 }

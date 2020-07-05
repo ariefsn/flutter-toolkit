@@ -1,8 +1,6 @@
 name: toolkit
-description: Toolkit
-version: 0.0.1
-authors:
-  - Arief Setiyo Nugroho<ayiexz22@gmail.com>
+description: Just a simple toolkit for dart and flutter. Some API are ready to help manipulate map, string, random, and sleep. Hopefully can be useful.
+version: 0.1.0
 homepage: https://github.com/ariefsn/dart-toolkit
 
 environment:

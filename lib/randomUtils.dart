@@ -2,7 +2,7 @@ import 'dart:math';
 
 class RandomUtils {
   /// Generate random string from specific characters and length.
-  String randomString (String chars, int length) {
+  String randomString(String chars, int length) {
     if (chars.isEmpty) {
       return "";
     }
@@ -40,7 +40,8 @@ class RandomUtils {
   ///
   /// For alpha lowercase uppercase included.
   String randomStringAlphaNumeric(int length) {
-    const chars = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
+    const chars =
+        "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
 
     return randomString(chars, length);
   }
@@ -67,21 +68,21 @@ class RandomUtils {
   }
 
   /// Generate random double.
-  double randomDouble () {
+  double randomDouble() {
     Random _rnd = Random();
 
     return _rnd.nextDouble();
   }
 
   /// Generate random boolean.
-  bool randomBoolean () {
+  bool randomBoolean() {
     Random _rnd = Random();
 
     return _rnd.nextBool();
   }
 
   /// Generate random color hex.
-  String randomColorHex () {
+  String randomColorHex() {
     const letters = "0123456789ABCDEF";
 
     String color = "#";
