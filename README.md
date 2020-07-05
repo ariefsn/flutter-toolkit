@@ -1,6 +1,6 @@
 ## Toolkit
 
-> Just a simple toolkit for dart.
+> Just a simple toolkit for flutter. Some APIs are ready to help manipulate map, string, random, and sleep. Hopefully can be useful.
 
 ### Usage
 
@@ -45,7 +45,7 @@
 - `sleepMinutes(int minutes)` => `Future`
   > Set sleep in minutes.
 
-- `sleepHour(int hours)` => `Future`
+- `sleepHours(int hours)` => `Future`
   > Set sleep in hours.
 
 - `sleepDays(int days)` => `Future`
@@ -85,6 +85,32 @@
 
 - `randomColorHex()` => `String`
   > Generate random color hex.
+
+#### Kit RegExp
+
+- `containsAlpha(String str)` => `bool`
+  > Check string contains alpha.
+
+- `containsAlphaLowercase(String str)` => `bool`
+  > Check string contains alpha lowercase.
+
+- `containsAlphaUppercase(String str)` => `bool`
+  > Check string contains alpha uppercase.
+
+- `containsNumeric(String str)` => `bool`
+  > Check string contains numeric.
+
+- `onlyAlpha(String str)` => `bool`
+  > Check string only alpha.
+
+- `onlyAlphaLowercase(String str)` => `bool`
+  > Check string only alpha lowercase.
+
+- `onlyAlphaUppercase(String str)` => `bool`
+  > Check string only alpha uppercase.
+
+- `onlyNumeric(String str)` => `bool`
+  > Check string only numeric.
 
 #### Kit Map
 
