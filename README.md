@@ -1,10 +1,27 @@
 ## Toolkit
 
-> Just a simple toolkit for flutter. Some APIs are ready to help manipulate map, string, random, and sleep. Hopefully can be useful.
+> Just a simple toolkit for flutter. Some APIs are ready to help manipulate map, string, random, sleep, and media query. Hopefully can be useful.
 
 ### Usage
 
-> Add `toolkit` as a dependency in your pubspec.yaml.
+1. Add `toolkit` as a dependency in your pubspec.yaml.
+
+    ```yaml
+    dependencies:
+      toolkit: ^0.2.0
+    ```
+
+2. Install it
+
+    ```shell
+      flutter pub get
+    ```
+
+3. And import it
+
+    ```dart
+      import 'package:toolkit/toolkit.dart';
+    ```
 
 #### Kit Common
 
@@ -182,6 +199,17 @@
 
 - `get(String key)` => `dynamic`
   > Get map value by key as dynamic.
+
+#### Kit MediaQuery
+
+- `getSize(BuildContext context)` => `Size`
+  > Get screen size.
+
+- `getWidth(BuildContext context, { double size = 1 })` => `double`
+  > Get screen width, can be resize with size between 0 and 1.
+
+- `getHeight(BuildContext context, { double size = 1 })` => `double`
+  > Get screen height, can be resize with size between 0 and 1.
 
 ### Example
 

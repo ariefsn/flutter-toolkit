@@ -1,6 +1,6 @@
 name: toolkit
-description: Just a simple toolkit for flutter. Some APIs are ready to help manipulate map, string, random, and sleep. Hopefully can be useful.
-version: 0.1.0
+description: Just a simple toolkit for flutter. Some APIs are ready to help manipulate map, string, random, sleep, and media query. Hopefully can be useful.
+version: 0.2.0
 homepage: https://github.com/ariefsn/dart-toolkit
 
 environment:
