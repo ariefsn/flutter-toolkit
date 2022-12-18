@@ -8,7 +8,7 @@
 
     ```yaml
     dependencies:
-      toolkit: ^0.3.0
+      toolkit: ^0.3.1
     ```
 
 2. Install it

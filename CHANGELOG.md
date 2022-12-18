@@ -1,3 +1,7 @@
+## [0.3.1] - 2022-12-18
+
+* Update intl to v0.18.0.
+
 ## [0.3.0] - 2022-12-18
 
 * Change to extention.
