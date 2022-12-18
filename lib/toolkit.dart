@@ -1,27 +1,30 @@
 library toolkit;
 
-import 'package:toolkit/mediaQueryUtils.dart';
-import 'package:toolkit/randomUtils.dart';
-import 'package:toolkit/regexpUtils.dart';
-import 'package:toolkit/sleepUtils.dart';
-import 'package:toolkit/stringUtils.dart';
-import 'package:toolkit/mapUtils.dart';
+import 'package:toolkit/media_query_utils.dart';
+import 'package:toolkit/random_utils.dart';
+import 'package:toolkit/regexp_utils.dart';
+import 'package:toolkit/sleep_utils.dart';
+import 'package:intl/intl.dart';
+
+enum ToolkitCase { original, upper, lower, capital, snake, camel }
 
 /// A Toolkit.
-class Toolkit with StringUtils, SleepUtils, RandomUtils, RegExpUtils, MediaQueryUtils {
-  MapUtils map() {
-    return MapUtils();
-  }
+class Toolkit {
+  static RandomUtils get random => RandomUtils();
+  static RegExpUtils get regex => RegExpUtils();
+  static MediaQueryUtils get mediaQuery => MediaQueryUtils();
+  static SleepUtils get sleep => SleepUtils();
 
-  Map<String, dynamic> clone(Map<String, dynamic> json) {
-    return Map<String, dynamic>.from(json);
-  }
-
-  bool isExists(dynamic value) {
+  static bool isExists(dynamic value) {
     return !["", null, false, 0].contains(value);
   }
 
-  bool isNotExists(dynamic value) {
+  static bool isNotExists(dynamic value) {
     return !isExists(value);
+  }
+
+  static String formatDatetime(DateTime datetime, String format,
+      {String? locale}) {
+    return DateFormat(format, locale).format(datetime);
   }
 }

@@ -14,14 +14,14 @@ class MediaQueryUtils {
   }
 
   /// Get screen width, can be resize with size between 0 and 1.
-  double getWidth(BuildContext context, { double size = 1 }) {
+  double getWidth(BuildContext context, {double size = 1}) {
     size = _validateSize(size);
 
     return MediaQuery.of(context).size.width * size;
   }
 
   /// Get screen height, can be resize with size between 0 and 1.
-  double getHeight(BuildContext context, { double size = 1 }) {
+  double getHeight(BuildContext context, {double size = 1}) {
     size = _validateSize(size);
 
     return MediaQuery.of(context).size.height * size;

@@ -1,43 +1,42 @@
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:toolkit/toolkit.dart';
 
 void main() {
-  final Toolkit t = Toolkit();
+  final exists = "hello";
+  final emptyString = "";
+  final nullValue = null;
+  final date = DateTime.parse("2022-12-15T00:00:00Z");
 
-  test('test common', () {
-    String str = "hello world";
+  test(
+    "Is Exists",
+    () {
+      expect(Toolkit.isExists(exists), true);
+      expect(Toolkit.isExists(emptyString), false);
+      expect(Toolkit.isExists(nullValue), false);
+    },
+  );
 
-    expect(t.capitalize(str), "Hello World");
-  });
+  test(
+    "Is Not Exists",
+    () {
+      expect(Toolkit.isNotExists(exists), false);
+      expect(Toolkit.isNotExists(emptyString), true);
+      expect(Toolkit.isNotExists(nullValue), true);
+    },
+  );
 
-  test('test map utils', () {
-    var map = t.map();
-
-    expect(map.isEmpty, true);
-
-    map.set("newKey", "newValue");
-
-    expect(map.keys.toList(), ["newKey"]);
-    expect(map.getString("newKey"), "newValue");
-
-    map.set("newKey2", "newValue2");
-    map.delete("newKey");
-    expect(map.getString("newKey"), null);
-  });
+  test(
+    "Format Date",
+    () {
+      expect(Toolkit.formatDatetime(date, "yyyy"), "${date.year}");
+      expect(Toolkit.formatDatetime(date, "yyyy-MM-d"),
+          "${date.year}-${date.month}-${date.day}");
+    },
+  );
 
   test('test random utils', () {
-    var randomStringAlphaNumeric = t.randomStringAlphaNumeric(12);
-    
+    var randomStringAlphaNumeric = Toolkit.random.stringAlphaNumeric(12);
+
     expect(randomStringAlphaNumeric.length, 12);
   });
-
-  test('test sleep utils', () async {
-    var start = DateTime.now();
-    await t.sleepSeconds(5);
-    var end = DateTime.now();
-    
-    expect(end.difference(start).inSeconds, 5);
-  });
-
 }

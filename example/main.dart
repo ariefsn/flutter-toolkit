@@ -1,19 +1,14 @@
-import 'package:toolkit/toolkit.dart';
+import 'map.dart';
+import 'random.dart';
+import 'regexp.dart';
+import 'sleep.dart';
 
-import 'mapExample.dart';
-import 'randomExample.dart';
-import 'regexpExample.dart';
-import 'sleepExample.dart';
-
-main () async {
-  // Init new toolkit
-  Toolkit t = Toolkit();
-
-  mapExample(t);
+main() async {
+  mapExample();
   print("\n\n");
-  randomExample(t);
+  randomExample();
   print("\n\n");
-  regexpExample(t);
+  regexpExample();
   print("\n\n");
-  sleepExample(t);
+  sleepExample();
 }
