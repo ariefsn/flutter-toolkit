@@ -1,31 +1,31 @@
 class SleepUtils {
   /// Set sleep by specific duration.
-  Future sleep(Duration duration) {
+  Future duration(Duration duration) {
     return Future.delayed(duration, () {});
   }
 
   /// Set sleep in milliseconds.
-  Future sleepMilliseconds(int milliseconds) {
+  Future milliseconds(int milliseconds) {
     return Future.delayed(Duration(milliseconds: milliseconds), () {});
   }
 
   /// Set sleep in seconds.
-  Future sleepSeconds(int seconds) {
+  Future seconds(int seconds) {
     return Future.delayed(Duration(seconds: seconds), () {});
   }
 
   /// Set sleep in minutes.
-  Future sleepMinutes(int minutes) {
+  Future minutes(int minutes) {
     return Future.delayed(Duration(minutes: minutes), () {});
   }
 
   /// Set sleep in hours.
-  Future sleepHours(int hours) {
+  Future hours(int hours) {
     return Future.delayed(Duration(hours: hours), () {});
   }
 
   /// Set sleep in days.
-  Future sleepDays(int days) {
+  Future days(int days) {
     return Future.delayed(Duration(days: days), () {});
   }
 }

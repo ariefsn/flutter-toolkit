@@ -1,6 +1,6 @@
 ## Toolkit
 
-> Just a simple toolkit for flutter. Some APIs are ready to help manipulate map, string, random, sleep, and media query. Hopefully can be useful.
+> Just a simple toolkit for flutter. Some APIs are ready to help manipulate map, string, random, sleep, and media query.
 
 ### Usage
 
@@ -8,7 +8,7 @@
 
     ```yaml
     dependencies:
-      toolkit: ^0.2.0
+      toolkit: ^0.3.0
     ```
 
 2. Install it
@@ -23,30 +23,102 @@
       import 'package:toolkit/toolkit.dart';
     ```
 
-#### Kit Common
-
-- `map()` => `MapUtils`
-  > Initiate new `Map<String, dynamic>`.
+#### Kit Map
 
 - `clone(Map<String, dynamic> json)` => `Map<String, dynamic>`
   > Clone a map into new map.
 
-- `isExists(dynamic value)` => `bool`
-  > Check value wether exists or not, will return true if exists.
+- `toStringify()` => `String`
+  > Encode to map string.
 
-- `isNotExists(dynamic value)` => `bool`
-  > Check value wether exists or not, will return true if not exists.
+- `toStringifyTransform(ToolkitCase mode)` => `String`
+  > Encode to map string, and transform the keys.
+
+- `toMapTransform(ToolkitCase mode)` => `Map<dynamic, dynamic>`
+  > New map, and transform the keys.
+
+- `parse(String mapString)` => `void`
+  > Parse json string to map.
+
+- `set(dynamic key, dynamic value)` => `void`
+  > Set map value.
+
+- `getString(String key)` => `String?`
+  > Get map value as string.
+
+- `getInt(String key)` => `int?`
+  > Get map value as int.
+
+- `getDouble(String key)` => `double?`
+  > Get map value as double.
+
+- `getBoolean(String key)` => `bool?`
+  > Get map value as boolean.
+
+- `getMap(String key)` => `Map<dynamic, dynamic>?`
+  > Get map value as map.
+
+- `getList(String key)` => `List<dynamic>?`
+  > Get map value as list.
+
+- `get<T>(String key)` => `T?`
+  > Get map value as specific type.
 
 #### Kit String
 
-- `capitalize(String str)` => `String`
-  > Capitalize string.
+- `toSentenceFromCamelCase()` => `String`
+  > To sentence case from camel case.
+
+- `toSentenceFromSnakeCase()` => `String`
+  > To sentence case from camel case.
+
+- `toCapitalCase()` => `String`
+  > Format to capital case.
+
+- `toSnakeCase()` => `String`
+  > Format to snake case.
+
+- `toCamelCase()` => `String`
+  > Format to camel case.
+
+- `toHyphenCase()` => `String`
+  > Format to hyphen case.
 
 - `limitString(String str, int length)` => `String`
   > Limit string into specific length.
 
 - `limitStringAppend(String str, int length, String append)` => `String`
   > Limit string into specific length, and append another string.
+
+- `isEmail` => `bool`
+  > Check if string is valid email format.
+
+- `isContainsAlpha` => `bool`
+  > Check if string is contains alpha.
+
+- `isContainsAlphaLowercase` => `bool`
+  > Check if string is contains alpha lowercase.
+
+- `isContainsAlphaUppercase` => `bool`
+  > Check if string is contains alpha uppercase.
+
+- `isContainsNumeric` => `bool`
+  > Check if string is contains numeric.
+
+- `isContainsSpecialCharacters` => `bool`
+  > Check if string is contains special characters.
+
+- `isOnlyAlpha` => `bool`
+  > Check if string is only alpha.
+
+- `isOnlyAlphaLowercase` => `bool`
+  > Check if string is only alpha lowercase.
+
+- `isOnlyAlphaUppercase` => `bool`
+  > Check if string is only alpha uppercase.
+
+- `isOnlyNumeric` => `bool`
+  > Check if string is only numeric.
 
 #### Kit Sleep
 
@@ -70,32 +142,32 @@
 
 #### Kit Random
 
-- `randomString(String chars, int length)` => `String`
+- `string(String chars, int length)` => `String`
   > Generate random string from specific characters and length.
 
-- `randomStringAlpha(int length)` => `String`
-  > Generate random string by alpha only. Lowercase uppercase included.
+- `stringAlpha(int length)` => `String`
+  > Generate random string of alpha only. Lowercase uppercase included.
 
-- `randomStringAlphaLowercase(int length)` => `String`
-  > Generate random string by alpha lowercase only.
+- `stringAlphaLowercase(int length)` => `String`
+  > Generate random string of alpha lowercase only.
 
-- `randomStringAlphaUppercase(int length)` => `String`
-  > Generate random string by alpha uppercase only.
+- `stringAlphaUppercase(int length)` => `String`
+  > Generate random string of alpha uppercase only.
 
-- `randomStringAlphaNumeric(int length)` => `String`
-  > Generate random string by alphanumeric. For alpha lowercase uppercase included.
+- `stringAlphaNumeric(int length)` => `String`
+  > Generate random string of alphanumeric. For alpha lowercase uppercase included.
 
-- `randomStringNumeric(int length)` => `String`
-  > Generate random string by numeric.
+- `stringNumeric(int length)` => `String`
+  > Generate random string of numeric.
 
-- `randomInt(int max)` => `int`
+- `specialCharacters(int length)` => `String`
+  > Generate random string of special characters.
+
+- `numeric(int max)` => `int`
   > Generate random int.
 
-- `randomIntBetween(int min, int max)` => `int`
+- `numericBetween(int min, int max)` => `int`
   > Generate random int, between min and max.
-
-- `randomDouble()` => `double`
-  > Generate random double.
 
 - `randomBoolean()` => `bool`
   > Generate random boolean.
@@ -129,76 +201,11 @@
 - `onlyNumeric(String str)` => `bool`
   > Check string only numeric.
 
-#### Kit Map
+- `email(String str)` => `bool`
+  > Check string is valid email format.
 
-- `length` => `int`
-  > Count length of map.
-
-- `isEmpty` => `bool`
-  > Check map if empty.
-
-- `isNotEmpty` => `bool`
-  > Check map if not empty.
-
-- `keys` => `Iterable<String>`
-  > Generate keys of map.
-
-- `values` => `Iterable<dynamic>`
-  > Generate values of map.
-
-- `toString()` => `String`
-  > Generate map to json string.
-
-- `toStringTransform(String mode)` => `String`
-  > Generate map to json string and transform keys. Transform to U (Uppercase), L (Lowercase), C (Capital).
-
-- `toJson` => `Map<String, dynamic>`
-  > Generate map to json.
-
-- `toJsonTransform(String mode)` => `Map<String, dynamic>`
-  > Generate map to json and transform keys. Transform to U (Uppercase), L (Lowercase), C (Capital).
-
-- `clone()` => `Map<String, dynamic>`
-  > Clone map as new map.
-
-- `set(String key, dynamic value)` => `void`
-  > Set value of map.
-
-- `clear()` => `void`
-  > Empty map.
-
-- `delete(String key)` => `void`
-  > Delete map value by key.
-
-- `parse(String jsonString)` => `void`
-  > Parse json string to map.
-
-- `keyExists(String key)` => `bool`
-  > Check if map key exists.
-
-- `valueExists(String key)` => `bool`
-  > Check if map value exists.
-
-- `getString(String key)` => `String`
-  > Get map value by key as string.
-
-- `getInt(String key)` => `int`
-  > Get map value by key as int.
-
-- `getDouble(String key)` => `double`
-  > Get map value by key as double.
-
-- `getBoolean(String key)` => `bool`
-  > Get map value by key as bool.
-
-- `getMap(String key)` => `Map<String, dynamic>`
-  > Get map value by key as map.
-
-- `getList(String key)` => `List<dynamic>`
-  > Get map value by key as list.
-
-- `get(String key)` => `dynamic`
-  > Get map value by key as dynamic.
+- `containsSpecialCharacters(String str)` => `bool`
+  > Check string contains special characters.
 
 #### Kit MediaQuery
 
@@ -215,11 +222,9 @@
 
 ```dart
 
-  Toolkit t = Toolkit();
-
   // create new map
-  var map1 = t.map();
-  var map2 = t.map();
+  var map1 = {};
+  var map2 = {};
 
   // set value of map1
   map1.set('keyA', 1);
@@ -235,18 +240,18 @@
   // delete keyA from map1
   map1.delete('keyA');
 
-  // transform json
-  var transformMap1Upper = map1.toJsonTransform("U");
-  var transformMap1Lower = map1.toJsonTransform("L");
-  var transformMap1Capital = map1.toJsonTransform("C");
+  // transform map
+  var transformMap1Upper = map1.toMapTransform(ToolkitCase.upper);
+  var transformMap1Lower = map1.toMapTransform(ToolkitCase.lower);
+  var transformMap1Capital = map1.toMapTransform(ToolkitCase.capital);
 
-  // transform json string
-  var transformMap2Upper = map2.toStringTransform("U");
-  var transformMap2Lower = map2.toStringTransform("L");
-  var transformMap2Capital = map2.toStringTransform("C");
+  // transform map string
+  var transformMap2Upper = map2.toStringifyTransform(ToolkitCase.upper);
+  var transformMap2Lower = map2.toStringifyTransform(ToolkitCase.lower);
+  var transformMap2Capital = map2.toStringifyTransform(ToolkitCase.capital);
 
   // parse from json string
-  var map3 = t.map();
+  var map3 = {};
   String jsonString = '{"name": "SpiderMan", "age": 40, "fly": true}';
   map3.parse(jsonString);
   map3.set('weapons', ['Pulse Bolt', 'Energy Blade', 'Tri-beam', 'Uni-beam', 'Smart Missiles']);
@@ -311,60 +316,60 @@
 
   print("===== RegExp Example =====");
   print("==> Contains Alpha");
-  print(alpha + " - " + t.containsAlpha(alpha).toString()); // ABCabc - true
-  print(alphaLowercase + " - " + t.containsAlpha(alphaLowercase).toString()); // abcdef - true
-  print(alphaUppercase + " - " + t.containsAlpha(alphaUppercase).toString()); // ABCDEF - true
-  print(alphaNumeric + " - " + t.containsAlpha(alphaNumeric).toString()); // ABCDEF123 - true
-  print(numeric + " - " + t.containsAlpha(numeric).toString()); // 123456 - false
+  print(alpha + " - " + Toolkit.regex.containsAlpha(alpha).toString()); // ABCabc - true
+  print(alphaLowercase + " - " + Toolkit.regex.containsAlpha(alphaLowercase).toString()); // abcdef - true
+  print(alphaUppercase + " - " + Toolkit.regex.containsAlpha(alphaUppercase).toString()); // ABCDEF - true
+  print(alphaNumeric + " - " + Toolkit.regex.containsAlpha(alphaNumeric).toString()); // ABCDEF123 - true
+  print(numeric + " - " + Toolkit.regex.containsAlpha(numeric).toString()); // 123456 - false
 
   print("==> Contains Alpha Lowercase");
-  print(alpha + " - " + t.containsAlphaLowercase(alpha).toString()); // ABCabc - true
-  print(alphaLowercase + " - " + t.containsAlphaLowercase(alphaLowercase).toString()); // abcdef - true
-  print(alphaUppercase + " - " + t.containsAlphaLowercase(alphaUppercase).toString()); // ABCDEF - false
-  print(alphaNumeric + " - " + t.containsAlphaLowercase(alphaNumeric).toString()); // ABCDEF123 - false
-  print(numeric + " - " + t.containsAlphaLowercase(numeric).toString()); 123456 - false
+  print(alpha + " - " + Toolkit.regex.containsAlphaLowercase(alpha).toString()); // ABCabc - true
+  print(alphaLowercase + " - " + Toolkit.regex.containsAlphaLowercase(alphaLowercase).toString()); // abcdef - true
+  print(alphaUppercase + " - " + Toolkit.regex.containsAlphaLowercase(alphaUppercase).toString()); // ABCDEF - false
+  print(alphaNumeric + " - " + Toolkit.regex.containsAlphaLowercase(alphaNumeric).toString()); // ABCDEF123 - false
+  print(numeric + " - " + Toolkit.regex.containsAlphaLowercase(numeric).toString()); 123456 - false
 
   print("==> Contains Alpha Uppercase");
-  print(alpha + " - " + t.containsAlphaUppercase(alpha).toString()); // ABCabc - true
-  print(alphaLowercase + " - " + t.containsAlphaUppercase(alphaLowercase).toString()); // abcdef - false
-  print(alphaUppercase + " - " + t.containsAlphaUppercase(alphaUppercase).toString()); // ABCDEF - true
-  print(alphaNumeric + " - " + t.containsAlphaUppercase(alphaNumeric).toString()); // ABCDEF123 - true
-  print(numeric + " - " + t.containsAlphaUppercase(numeric).toString()); // 123456 - false
+  print(alpha + " - " + Toolkit.regex.containsAlphaUppercase(alpha).toString()); // ABCabc - true
+  print(alphaLowercase + " - " + Toolkit.regex.containsAlphaUppercase(alphaLowercase).toString()); // abcdef - false
+  print(alphaUppercase + " - " + Toolkit.regex.containsAlphaUppercase(alphaUppercase).toString()); // ABCDEF - true
+  print(alphaNumeric + " - " + Toolkit.regex.containsAlphaUppercase(alphaNumeric).toString()); // ABCDEF123 - true
+  print(numeric + " - " + Toolkit.regex.containsAlphaUppercase(numeric).toString()); // 123456 - false
 
   print("==> Contains Numeric");
-  print(alpha + " - " + t.containsNumeric(alpha).toString()); // ABCabc - false
-  print(alphaLowercase + " - " + t.containsNumeric(alphaLowercase).toString()); // abcdef - false
-  print(alphaUppercase + " - " + t.containsNumeric(alphaUppercase).toString()); // ABCDEF - false
-  print(alphaNumeric + " - " + t.containsNumeric(alphaNumeric).toString()); // ABCDEF123 - true
-  print(numeric + " - " + t.containsNumeric(numeric).toString()); // 123456 - true
+  print(alpha + " - " + Toolkit.regex.containsNumeric(alpha).toString()); // ABCabc - false
+  print(alphaLowercase + " - " + Toolkit.regex.containsNumeric(alphaLowercase).toString()); // abcdef - false
+  print(alphaUppercase + " - " + Toolkit.regex.containsNumeric(alphaUppercase).toString()); // ABCDEF - false
+  print(alphaNumeric + " - " + Toolkit.regex.containsNumeric(alphaNumeric).toString()); // ABCDEF123 - true
+  print(numeric + " - " + Toolkit.regex.containsNumeric(numeric).toString()); // 123456 - true
 
   print("==> Only Alpha");
-  print(alpha + " - " + t.onlyAlpha(alpha).toString()); // ABCabc - true
-  print(alphaLowercase + " - " + t.onlyAlpha(alphaLowercase).toString()); // abcdef - true
-  print(alphaUppercase + " - " + t.onlyAlpha(alphaUppercase).toString()); // ABCDEF - true
-  print(alphaNumeric + " - " + t.onlyAlpha(alphaNumeric).toString()); // ABCDEF123 - false
-  print(numeric + " - " + t.onlyAlpha(numeric).toString()); // 123456 - false
+  print(alpha + " - " + Toolkit.regex.onlyAlpha(alpha).toString()); // ABCabc - true
+  print(alphaLowercase + " - " + Toolkit.regex.onlyAlpha(alphaLowercase).toString()); // abcdef - true
+  print(alphaUppercase + " - " + Toolkit.regex.onlyAlpha(alphaUppercase).toString()); // ABCDEF - true
+  print(alphaNumeric + " - " + Toolkit.regex.onlyAlpha(alphaNumeric).toString()); // ABCDEF123 - false
+  print(numeric + " - " + Toolkit.regex.onlyAlpha(numeric).toString()); // 123456 - false
 
   print("==> Only Alpha Lowercase");
-  print(alpha + " - " + t.onlyAlphaLowercase(alpha).toString()); // ABCabc - false
-  print(alphaLowercase + " - " + t.onlyAlphaLowercase(alphaLowercase).toString()); // abcdef - true
-  print(alphaUppercase + " - " + t.onlyAlphaLowercase(alphaUppercase).toString()); // ABCDEF - false
-  print(alphaNumeric + " - " + t.onlyAlphaLowercase(alphaNumeric).toString()); // ABCDEF123 - false
-  print(numeric + " - " + t.onlyAlphaLowercase(numeric).toString()); // 123456 - false
+  print(alpha + " - " + Toolkit.regex.onlyAlphaLowercase(alpha).toString()); // ABCabc - false
+  print(alphaLowercase + " - " + Toolkit.regex.onlyAlphaLowercase(alphaLowercase).toString()); // abcdef - true
+  print(alphaUppercase + " - " + Toolkit.regex.onlyAlphaLowercase(alphaUppercase).toString()); // ABCDEF - false
+  print(alphaNumeric + " - " + Toolkit.regex.onlyAlphaLowercase(alphaNumeric).toString()); // ABCDEF123 - false
+  print(numeric + " - " + Toolkit.regex.onlyAlphaLowercase(numeric).toString()); // 123456 - false
 
   print("==> Only Alpha Uppercase");
-  print(alpha + " - " + t.onlyAlphaUppercase(alpha).toString()); // ABCabc - false
-  print(alphaLowercase + " - " + t.onlyAlphaUppercase(alphaLowercase).toString()); // abcdef - false
-  print(alphaUppercase + " - " + t.onlyAlphaUppercase(alphaUppercase).toString()); // ABCDEF - true
-  print(alphaNumeric + " - " + t.onlyAlphaUppercase(alphaNumeric).toString()); // ABCDEF123 - false
-  print(numeric + " - " + t.onlyAlphaUppercase(numeric).toString()); // 123456 - false
+  print(alpha + " - " + Toolkit.regex.onlyAlphaUppercase(alpha).toString()); // ABCabc - false
+  print(alphaLowercase + " - " + Toolkit.regex.onlyAlphaUppercase(alphaLowercase).toString()); // abcdef - false
+  print(alphaUppercase + " - " + Toolkit.regex.onlyAlphaUppercase(alphaUppercase).toString()); // ABCDEF - true
+  print(alphaNumeric + " - " + Toolkit.regex.onlyAlphaUppercase(alphaNumeric).toString()); // ABCDEF123 - false
+  print(numeric + " - " + Toolkit.regex.onlyAlphaUppercase(numeric).toString()); // 123456 - false
 
   print("==> Only Numeric");
-  print(alpha + " - " + t.onlyNumeric(alpha).toString()); // ABCabc - false
-  print(alphaLowercase + " - " + t.onlyNumeric(alphaLowercase).toString()); // abcdef - false
-  print(alphaUppercase + " - " + t.onlyNumeric(alphaUppercase).toString()); // ABCDEF - false
-  print(alphaNumeric + " - " + t.onlyNumeric(alphaNumeric).toString()); // ABCDEF123 - false
-  print(numeric + " - " + t.onlyNumeric(numeric).toString()); // 123456 - true
+  print(alpha + " - " + Toolkit.regex.onlyNumeric(alpha).toString()); // ABCabc - false
+  print(alphaLowercase + " - " + Toolkit.regex.onlyNumeric(alphaLowercase).toString()); // abcdef - false
+  print(alphaUppercase + " - " + Toolkit.regex.onlyNumeric(alphaUppercase).toString()); // ABCDEF - false
+  print(alphaNumeric + " - " + Toolkit.regex.onlyNumeric(alphaNumeric).toString()); // ABCDEF123 - false
+  print(numeric + " - " + Toolkit.regex.onlyNumeric(numeric).toString()); // 123456 - true
 
   print("===== Sleep Example =====");
   // sleep by 5 seconds

@@ -1,9 +1,9 @@
 import 'package:toolkit/toolkit.dart';
 
-sleepExample (Toolkit t) async {
+sleepExample() async {
   print("===== Sleep Example =====");
   // sleep by 5 seconds
   print(DateTime.now());
-  await t.sleepSeconds(5);
+  await Toolkit.sleep.seconds(5);
   print(DateTime.now());
 }
