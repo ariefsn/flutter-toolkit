@@ -6,3 +6,6 @@ run.coverage:
 
 run.dry:
 	flutter pub publish --dry-run
+
+publish:
+	flutter pub publish

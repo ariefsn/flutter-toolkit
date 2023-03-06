@@ -1,6 +1,6 @@
 name: toolkit
 description: Just a simple toolkit for flutter. Will add extensions to String, Map, and some common helper.
-version: 0.3.1
+version: 0.3.2
 homepage: https://github.com/ariefsn/dart-toolkit
 
 environment:
