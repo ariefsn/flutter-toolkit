@@ -111,4 +111,11 @@ extension StringExt on String {
   bool get isOnlyNumeric => Toolkit.regex.onlyNumeric(this);
   bool get isContainsSpecialCharacters =>
       Toolkit.regex.containsSpecialCharacters(this);
+
+  String get parse => toString() == 'null' ? '' : toString();
+  int get asInt => toString() == 'null' ? 0 : int.parse(toString());
+  double get asDouble => toString() == 'null' ? 0 : double.parse(toString());
+  bool get asBool => ['true', '1', 'yes'].contains(toString().toLowerCase());
+  DateTime get asDateTime =>
+      parse.isNotEmpty ? DateTime.parse(parse) : DateTime(1901);
 }

@@ -1,3 +1,8 @@
+## [0.3.2] - 2023-03-06
+
+* Update string utils.
+* Add text style utils.
+
 ## [0.3.1] - 2022-12-18
 
 * Update intl to v0.18.0.
